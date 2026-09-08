@@ -33,3 +33,65 @@ game.jsscript>
 </body>
 18
 </html>
+
+
+//move the character
+const character = document.getElementById("character");
+const popup = document.getElementById("popup");
+
+let x = 20;
+let y = 300;
+
+const speed = 10;
+
+document.addEventListener("keydown", (e) => {
+
+    switch(e.key){
+
+        case "ArrowUp":
+            y -= speed;
+            break;
+
+        case "ArrowDown":
+            y += speed;
+            break;
+
+        case "ArrowLeft":
+            x -= speed;
+            break;
+
+        case "ArrowRight":
+            x += speed;
+            break;
+    }
+
+    character.style.left = x + "px";
+    character.style.top = y + "px";
+
+    checkStoryPoints();
+});
+
+// Tigger Story text
+function checkStoryPoints(){
+
+    if(x > 200 && x < 250){
+
+        popup.classList.remove("hidden");
+        popup.innerText =
+        "This is where the story begins.";
+    }
+
+    if(x > 500 && x < 550){
+
+        popup.classList.remove("hidden");
+        popup.innerText =
+        "A major challenge appeared.";
+    }
+
+    if(x > 800 && x < 850){
+
+        popup.classList.remove("hidden");
+        popup.innerText =
+        "The hero learned something new.";
+    }
+}
