@@ -94,4 +94,9 @@ function checkStoryPoints(){
         popup.innerText =
         "The hero learned something new.";
     }
+    if(x > window.innerWidth - 80){
+
+    window.location.href = "page2.html";
+
+}
 }
